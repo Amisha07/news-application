@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { NewsApiService } from './news-api.service';
-
+import {DemoMaterialModule} from './material-module';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
   imports:      [ BrowserModule, FormsModule, BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    DemoMaterialModule,
     MatButtonModule,
     MatMenuModule,
     MatCardModule,

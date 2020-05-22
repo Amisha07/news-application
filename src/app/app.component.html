@@ -1,13 +1,9 @@
 <mat-toolbar color="primary">
-  <button mat-button (click)="sidenav.open ()" ><mat-icon>menu</mat-icon></button>
   <span>News Headlines</span>  
   <span class="example-spacer"></span>
-  <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
+  
 </mat-toolbar>
-<mat-menu #appMenu="matMenu">
-  <button mat-menu-item> Settings </button>
-  <button mat-menu-item> Help </button>
-</mat-menu>
+
 <mat-sidenav-container class="example-container">
   
   <mat-sidenav #sidenav class="example-sidenav">
@@ -21,6 +17,21 @@
         </mat-list-item>
     </mat-list>
   </mat-sidenav>
+
+  <mat-form-field>
+      <button mat-button [matMenuTriggerFor]="appMenu">ettings</button>
+  <mat-menu #appMenu="matMenu">
+  <button mat-menu-item> Settings </button>
+  <button mat-menu-item> Help </button>
+</mat-menu>
+  <mat-label>Choose one</mat-label>
+  <mat-select [formControl]="selected" [errorStateMatcher]="matcher">
+    <mat-option>Clear</mat-option>
+    <mat-option value="valid">Valid option</mat-option>
+    <mat-option value="invalid">Invalid option</mat-option>
+  </mat-select>
+  </mat-form-field>
+
   <mat-card class="example-card"  *ngFor="let article of mArticles">
     <mat-card-header>
       <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
